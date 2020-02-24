@@ -63,3 +63,6 @@ buck-out/
 
 # Chave API Maps Android
 /android/app/src/main/res/values/secrets.xml
+
+# Firebase google-services.json
+/android/app/google-services.json

@@ -109,7 +109,6 @@ function Login({route}) {
 
       const userRet = {user: 'relry'};
 
-      //signIn(userRet.user);
       efetuarLogin(userRet);
     } catch (err) {
       console.log('Não foi possivel autenticar.');
