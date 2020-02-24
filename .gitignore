@@ -60,3 +60,6 @@ buck-out/
 
 # Arquivos de configuracoes internas e keys
 /src/config/
+
+# Chave API Maps Android
+/android/app/src/main/res/values/secrets.xml

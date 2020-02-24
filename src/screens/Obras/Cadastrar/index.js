@@ -7,9 +7,9 @@ import {
   ScrollView,
   TouchableOpacity,
 } from 'react-native';
-//import MapView from 'react-native-maps';
+import MapView from 'react-native-maps';
 
-//import DatePicker from '../../../components/DatePicker';
+import DatePicker from '../../../components/DatePicker';
 
 import Color from '../../../config/color';
 
@@ -53,15 +53,26 @@ export default function Cadastrar({navigation}) {
       </View>
       <View>
         <Text style={styles.label}>Data de Inicio:</Text>
-        {/*<DatePicker
+        <DatePicker
           date={obraDataInicio}
           onChange={setObraDataInicio}
           styleContainer={styles.dataContainer}
           styleText={styles.dataText}
-        />*/}
+        />
       </View>
       <View>
         <Text style={styles.label}>Endereço:</Text>
+        <MapView
+          style={styles.map}
+          initialRegion={{
+            latitude: -23.436102,
+            longitude: -45.083178,
+            latitudeDelta: 0.01,
+            longitudeDelta: 0.01,
+          }}
+          rotateEnabled={false}
+          //zoomEnabled={false}
+        />
       </View>
       <TouchableOpacity
         style={styles.button}
