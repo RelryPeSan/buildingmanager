@@ -107,7 +107,10 @@ function Login({route}) {
         password,
       ); //*/
 
+      const token = await userRet.user.getIdToken(true);
+      //console.log(token);
       //const userRet = {user: 'relry'};
+      userRet.user.token = token;
 
       efetuarLogin(userRet);
     } catch (err) {

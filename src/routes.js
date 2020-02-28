@@ -1,5 +1,5 @@
 import React from 'react';
-//import AsyncStorage from '@react-native-community/async-storage';
+import AsyncStorage from '@react-native-community/async-storage';
 import {NavigationContainer} from '@react-navigation/native';
 import {createStackNavigator} from '@react-navigation/stack';
 
@@ -7,7 +7,7 @@ import LoginScreen from './screens/Login';
 import HomeScreen from './screens/Home';
 
 import Loading from './components/Loading';
-//import storageKey from './config/storageKey';
+import storageKey from './config/storageKey';
 
 const AuthContext = React.createContext();
 
@@ -56,9 +56,9 @@ export default function App({navigation}) {
       let userData;
 
       try {
-        //userToken = await AsyncStorage.getItem(storageKey.USER_TOKEN);
-        //userData = JSON.parse(await AsyncStorage.getItem(storageKey.USER_DATA));
-        console.log(userToken);
+        userToken = await AsyncStorage.getItem(storageKey.USER_TOKEN);
+        userData = JSON.parse(await AsyncStorage.getItem(storageKey.USER_DATA));
+        //console.log(userToken);
         //console.log(userData);
       } catch (e) {
         // Restoring token failed
@@ -81,7 +81,7 @@ export default function App({navigation}) {
         // We will also need to handle errors if sign in failed
         // After getting token, we need to persist the token using `AsyncStorage`
         // In the example, we'll use a dummy token
-        const token = 'dummy-auth-token';
+        const token = data.user.token;
         setLoading(true);
 
         await dispatch({
@@ -90,12 +90,12 @@ export default function App({navigation}) {
           data,
         });
 
-        //await AsyncStorage.setItem(storageKey.USER_TOKEN, token);
-        //await AsyncStorage.setItem(storageKey.USER_DATA, JSON.stringify(data));
+        await AsyncStorage.setItem(storageKey.USER_TOKEN, token);
+        await AsyncStorage.setItem(storageKey.USER_DATA, JSON.stringify(data));
         setLoading(false);
       },
       signOut: async () => {
-        //await AsyncStorage.clear();
+        await AsyncStorage.clear();
         dispatch({type: 'SIGN_OUT'});
       },
       signUp: async data => {
