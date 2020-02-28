@@ -18,6 +18,12 @@ export default function Cadastrar({navigation}) {
   const [obraResponsavel, setObraResponsavel] = useState('');
   const [obraCliente, setObraCliente] = useState('');
   const [obraDataInicio, setObraDataInicio] = useState(new Date());
+  const [region, setRegion] = useState({
+    latitude: -23.436102,
+    longitude: -45.083178,
+    latitudeDelta: 0.01,
+    longitudeDelta: 0.01,
+  });
 
   return (
     <ScrollView style={styles.container}>
@@ -70,7 +76,11 @@ export default function Cadastrar({navigation}) {
             latitudeDelta: 0.01,
             longitudeDelta: 0.01,
           }}
+          region={region}
           rotateEnabled={false}
+          showsUserLocation
+          loadingEnabled
+          showsPointsOfInterest={false}
           //zoomEnabled={false}
         />
       </View>

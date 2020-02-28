@@ -9,7 +9,7 @@ import {
   StyleSheet,
   Keyboard,
 } from 'react-native';
-//import Firebase from 'react-native-firebase';
+import Firebase from 'react-native-firebase';
 
 import logoImage from '../../assets/predio-64.png';
 import Color from '../../config/color';
@@ -102,12 +102,12 @@ function Login({route}) {
     }
 
     try {
-      /*const userRet = await Firebase.auth().signInWithEmailAndPassword(
+      const userRet = await Firebase.auth().signInWithEmailAndPassword(
         username,
         password,
-      );//*/
+      ); //*/
 
-      const userRet = {user: 'relry'};
+      //const userRet = {user: 'relry'};
 
       efetuarLogin(userRet);
     } catch (err) {
