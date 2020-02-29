@@ -3,18 +3,30 @@ import {TouchableOpacity, StyleSheet} from 'react-native';
 
 import Icon from 'react-native-vector-icons/AntDesign';
 
-export default function TouchableIcon({nav, toRoute, nameIcon}) {
+export default function TouchableIcon({
+  onPress,
+  nameIcon = 'plus',
+  size = 22,
+  styleIcon,
+  styleTouchable,
+}) {
   return (
-    <TouchableOpacity onPress={() => nav.navigate(toRoute)}>
-      <Icon name={nameIcon} size={22} style={styles.botaoPlus} />
+    <TouchableOpacity
+      onPress={onPress}
+      style={[styles.touchable, styleTouchable]}
+      activeOpacity={0.65}>
+      <Icon name={nameIcon} size={size} style={[styles.icon, styleIcon]} />
     </TouchableOpacity>
   );
 }
 
 const styles = StyleSheet.create({
-  botaoPlus: {
+  touchable: {
+    margin: 10,
+    borderRadius: 10000,
+  },
+  icon: {
     color: '#FFF',
-    marginRight: 10,
     padding: 6,
   },
 });

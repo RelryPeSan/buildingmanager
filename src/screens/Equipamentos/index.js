@@ -1,26 +1,45 @@
 import React from 'react';
+import {createStackNavigator} from '@react-navigation/stack';
+import MenuHamburguer from '../../components/CustomDrawer/MenuHamburguer';
+import TouchableIcon from '../../components/TouchableIcon';
 
-import {View, Text, StyleSheet} from 'react-native';
+import EquipamentosCadastrar from './Cadastrar';
+import EquipamentosListar from './Listar';
 
-//import EquipamentosDB from '../../model/equipamentos';
+import Color from '../../config/color';
 
-export default function Equipamentos() {
-  /*async function getEquipamentos() {
-    const eq = await EquipamentosDB.index();
-    console.log(eq);
-  } //*/
+const Stack = createStackNavigator();
 
+export default function StackEquipamentos() {
   return (
-    <View style={styles.container}>
-      <Text>Equipamentos</Text>
-    </View>
+    <Stack.Navigator
+      screenOptions={{
+        headerTintColor: '#FFF',
+        headerStyle: {backgroundColor: Color.primary},
+      }}>
+      <Stack.Screen
+        name="Listar"
+        component={EquipamentosListar}
+        options={({navigation}) => ({
+          title: 'Equipamentos',
+          headerLeft: () => (
+            <MenuHamburguer nav={() => navigation.openDrawer()} />
+          ),
+          headerRight: () => (
+            <TouchableIcon
+              onPress={() => {
+                navigation.navigate('Cadastrar');
+              }}
+              nameIcon="plus"
+            />
+          ),
+        })}
+      />
+      <Stack.Screen
+        name="Cadastrar"
+        component={EquipamentosCadastrar}
+        options={{title: 'Novo Equipamento'}}
+      />
+    </Stack.Navigator>
   );
 }
-
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});

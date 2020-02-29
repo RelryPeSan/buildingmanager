@@ -27,8 +27,9 @@ export default function StackClientes() {
           ),
           headerRight: () => (
             <TouchableIcon
-              nav={navigation}
-              toRoute="Cadastrar"
+              onPress={() => {
+                navigation.navigate('Cadastrar');
+              }}
               nameIcon="plus"
             />
           ),

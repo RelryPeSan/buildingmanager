@@ -1,7 +1,7 @@
 import React from 'react';
 import {View, FlatList, StyleSheet} from 'react-native';
 
-import ListItem from '../../../components/FlatList/ListItem';
+import ListItem from '../../../components/FlatList/ListItemObra';
 import Separator from '../../../components/util/Separator';
 
 export default function Andamento() {

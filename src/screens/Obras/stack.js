@@ -27,8 +27,9 @@ function StackObra() {
           title: 'Obras',
           headerRight: () => (
             <TouchableIcon
-              nav={navigation}
-              toRoute="ObraCadastrar"
+              onPress={() => {
+                navigation.navigate('ObraCadastrar');
+              }}
               nameIcon="plus"
             />
           ),

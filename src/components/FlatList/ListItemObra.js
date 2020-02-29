@@ -1,11 +1,11 @@
 import React from 'react';
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 
-import ProgressBar from '../../components/ProgressBar';
+import ProgressBar from '../ProgressBar';
 //import LeftActions from './LeftActions';
 //import RightActions from './RightActions';
 
-function ListItem({data, onPress, ...props}) {
+function ListItemObra({data, onPress, ...props}) {
   return (
     <TouchableOpacity activeOpacity={0.75} onPress={onPress} {...props}>
       <View style={styles.tituloCliente}>
@@ -65,4 +65,4 @@ const styles = StyleSheet.create({
   },
 });
 
-export default ListItem;
+export default ListItemObra;
