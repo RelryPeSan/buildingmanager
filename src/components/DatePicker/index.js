@@ -15,8 +15,8 @@ export default function DatePicker({
   const onChangeDate = (event, selectedDate) => {
     const currentDate = selectedDate || date;
 
-    setShow(Platform.OS === 'ios' ? true : false);
-    //setDate(currentDate);
+    setShow(Platform.OS === 'ios');
+    // setDate(currentDate);
     onChange(currentDate);
   };
 
@@ -24,19 +24,13 @@ export default function DatePicker({
     setShow(true);
   }
 
-  //const {date, show, mode} = this.state;
-  //console.log(this.state);
+  // const {date, show, mode} = this.state;
+  // console.log(this.state);
 
   function formatDate(data = new Date(), format) {
     switch (format) {
       case 'DD/MM/YYYY':
-        return (
-          data.getDate() +
-          '/' +
-          (data.getMonth() + 1) +
-          '/' +
-          data.getFullYear()
-        );
+        return `${data.getDate()}/${data.getMonth() + 1}/${data.getFullYear()}`;
     }
   }
 
@@ -53,7 +47,7 @@ export default function DatePicker({
           timeZoneOffsetInMinutes={0}
           value={date}
           mode={mode}
-          is24Hour={true}
+          is24Hour
           display="default"
           onChange={onChangeDate}
         />
@@ -64,9 +58,9 @@ export default function DatePicker({
 
 const styles = StyleSheet.create({
   container: {
-    //borderWidth: 1,
-    //borderRadius: 5,
-    //height: 30,
+    // borderWidth: 1,
+    // borderRadius: 5,
+    // height: 30,
     justifyContent: 'center',
   },
   dataText: {

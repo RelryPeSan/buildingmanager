@@ -1,4 +1,4 @@
-/*import firebase from '../services/firebase';
+/* import firebase from '../services/firebase';
 
 export default {
   async index(data) {
@@ -8,4 +8,4 @@ export default {
     return resp;
   },
 };
-//*/
+// */

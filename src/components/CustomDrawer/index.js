@@ -5,7 +5,7 @@ import {
   DrawerItemList,
 } from '@react-navigation/drawer';
 
-//import Color from '../../config/color';
+// import Color from '../../config/color';
 
 function CustomDrawer({userdata, ...props}) {
   const {user} = userdata;
@@ -37,7 +37,7 @@ function CustomDrawer({userdata, ...props}) {
 
 const styleLocal = StyleSheet.create({
   container: {
-    //flex: 1,
+    // flex: 1,
   },
   userArea: {
     backgroundColor: '#a236f4',
@@ -45,7 +45,7 @@ const styleLocal = StyleSheet.create({
     marginTop: -4,
   },
   background: {
-    //flex: 1,
+    // flex: 1,
     position: 'absolute',
     width: '100%',
     height: '100%',
@@ -74,7 +74,7 @@ const styleLocal = StyleSheet.create({
     marginHorizontal: 0,
     marginVertical: 0,
     borderRadius: 0,
-    //marginHorizontal: -20,
+    // marginHorizontal: -20,
   },
   label: {},
 });

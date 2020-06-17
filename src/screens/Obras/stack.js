@@ -1,7 +1,7 @@
 import * as React from 'react';
 import {createStackNavigator} from '@react-navigation/stack';
 
-import ObrasScreen from '../Obras';
+import ObrasScreen from '.';
 import ObraInformacaoScreen from './Informacao';
 import ObraCadastrarScreen from './Cadastrar';
 

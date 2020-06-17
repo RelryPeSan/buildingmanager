@@ -2,8 +2,8 @@ import React from 'react';
 import {View, Text, TouchableOpacity, StyleSheet} from 'react-native';
 
 import ProgressBar from '../ProgressBar';
-//import LeftActions from './LeftActions';
-//import RightActions from './RightActions';
+// import LeftActions from './LeftActions';
+// import RightActions from './RightActions';
 
 function ListItemObra({data, onPress, ...props}) {
   return (

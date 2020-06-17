@@ -5,7 +5,7 @@ import {View, StyleSheet} from 'react-native';
 
 export default class ProgressBar extends Component {
   render() {
-    const percent = this.props.progress + '%';
+    const percent = `${this.props.progress}%`;
 
     return (
       <View style={[styles.container, this.props.styleContainer]}>

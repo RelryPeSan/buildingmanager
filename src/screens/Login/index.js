@@ -35,7 +35,7 @@ function Login({route}) {
 
   useEffect(() => {
     Keyboard.addListener('keyboardDidShow', tecladoAparece);
-    Keyboard.addListener('keyboardDidHide', tecladoOcultado); //*/
+    Keyboard.addListener('keyboardDidHide', tecladoOcultado); //* /
 
     Animated.parallel([
       Animated.spring(offset.y, {
@@ -76,11 +76,11 @@ function Login({route}) {
         duration: 250,
       }),
     ]).start();
-  } //*/
+  } //* /
 
   async function login() {
     loadingScreen(true);
-    let arrayFields = [];
+    const arrayFields = [];
 
     if (username === '') {
       arrayFields.push('Email');
@@ -91,10 +91,9 @@ function Login({route}) {
 
     if (arrayFields.length > 0) {
       alert(
-        'Os campos a seguir são obrigatórios:' +
-          arrayFields.map(item => {
-            return '\n - ' + item;
-          }),
+        `Os campos a seguir são obrigatórios:${arrayFields.map(item => {
+          return `\n - ${item}`;
+        })}`,
       );
 
       loadingScreen(false);
@@ -105,11 +104,11 @@ function Login({route}) {
       const userRet = await Firebase.auth().signInWithEmailAndPassword(
         username,
         password,
-      ); //*/
+      ); //* /
 
       const token = await userRet.user.getIdToken(true);
-      //console.log(token);
-      //const userRet = {user: 'relry'};
+      // console.log(token);
+      // const userRet = {user: 'relry'};
       userRet.user.token = token;
 
       efetuarLogin(userRet);
@@ -147,29 +146,29 @@ function Login({route}) {
         <TextInput
           placeholder="Email"
           autoCorrect={false}
-          autoCapitalize={'none'}
+          autoCapitalize="none"
           value={username}
           onChangeText={setUsername}
           style={styles.input}
-          returnKeyType={'next'}
+          returnKeyType="next"
           blurOnSubmit={false}
         />
         <TextInput
           placeholder="Senha"
           autoCorrect={false}
-          autoCapitalize={'none'}
+          autoCapitalize="none"
           value={password}
           onChangeText={setPassword}
           style={styles.input}
           secureTextEntry
-          returnKeyType={'go'}
+          returnKeyType="go"
         />
 
         <TouchableOpacity
           style={styles.buttonAcessar}
           activeOpacity={0.8}
           onPress={() => {
-            //signIn({username, password});
+            // signIn({username, password});
             login();
           }}>
           <Text style={styles.textAcessar}>Acessar</Text>

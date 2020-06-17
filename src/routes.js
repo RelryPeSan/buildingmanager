@@ -58,8 +58,8 @@ export default function App({navigation}) {
       try {
         userToken = await AsyncStorage.getItem(storageKey.USER_TOKEN);
         userData = JSON.parse(await AsyncStorage.getItem(storageKey.USER_DATA));
-        //console.log(userToken);
-        //console.log(userData);
+        // console.log(userToken);
+        // console.log(userData);
       } catch (e) {
         // Restoring token failed
       }
@@ -81,7 +81,7 @@ export default function App({navigation}) {
         // We will also need to handle errors if sign in failed
         // After getting token, we need to persist the token using `AsyncStorage`
         // In the example, we'll use a dummy token
-        const token = data.user.token;
+        const {token} = data.user;
         setLoading(true);
 
         await dispatch({

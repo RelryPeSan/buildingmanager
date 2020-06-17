@@ -18,7 +18,7 @@ export default function Cadastrar({navigation}) {
   const [obraResponsavel, setObraResponsavel] = useState('');
   const [obraCliente, setObraCliente] = useState('');
   const [obraDataInicio, setObraDataInicio] = useState(new Date());
-  const [region, setRegion] = useState({
+  const [region] = useState({
     latitude: -23.436102,
     longitude: -45.083178,
     latitudeDelta: 0.01,
@@ -81,7 +81,7 @@ export default function Cadastrar({navigation}) {
           showsUserLocation
           loadingEnabled
           showsPointsOfInterest={false}
-          //zoomEnabled={false}
+          // zoomEnabled={false}
         />
       </View>
       <TouchableOpacity

@@ -24,7 +24,7 @@ export default function Search({iconEnabled = true}) {
 const styles = StyleSheet.create({
   container: {
     width: '100%',
-    //backgroundColor: '#FFF',
+    // backgroundColor: '#FFF',
     paddingHorizontal: 10,
     margin: 5,
   },
@@ -40,7 +40,7 @@ const styles = StyleSheet.create({
   touchableIcon: {
     position: 'absolute',
     right: 10,
-    //borderWidth: 1,
+    // borderWidth: 1,
     top: -5,
   },
   icon: {

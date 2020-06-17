@@ -2,7 +2,7 @@ import React from 'react';
 
 import {View, StyleSheet} from 'react-native';
 
-//import Color from '../../config/color';
+// import Color from '../../config/color';
 import ButtonOpacity from '../../components/ButtonOpacity';
 
 export default function Settings({navigation, route}) {
@@ -11,7 +11,7 @@ export default function Settings({navigation, route}) {
   function signOut() {
     loadingScreen(true);
     efetuarLogout();
-    //navigation.setOptions();
+    // navigation.setOptions();
   }
 
   return (

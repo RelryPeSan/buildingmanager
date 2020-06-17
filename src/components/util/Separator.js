@@ -8,8 +8,8 @@ function Separator({size}) {
 const styles = StyleSheet.create({
   separator: {
     flex: 1,
-    //height: 10,
-    //backgroundColor: '#ddd',
+    // height: 10,
+    // backgroundColor: '#ddd',
   },
 });
 

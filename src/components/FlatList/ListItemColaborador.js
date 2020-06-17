@@ -1,8 +1,8 @@
 import React from 'react';
 import {View, Text, TouchableOpacity, StyleSheet, Image} from 'react-native';
 
-//import LeftActions from './LeftActions';
-//import RightActions from './RightActions';
+// import LeftActions from './LeftActions';
+// import RightActions from './RightActions';
 
 function ListItemColaborador({data, onPress, ...props}) {
   return (
